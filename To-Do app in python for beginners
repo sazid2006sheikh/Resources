@@ -1,0 +1,48 @@
+#make the TO_DO App in 4 steps
+
+#empty list to store the data
+tasks = []
+#showing tasks
+def show_tasks():
+    print("\nYour To-Do List:")
+    if not tasks:
+        print("No tasks yet!")
+    else:
+        for i, task in enumerate(tasks, 1):
+            print(f"{i}. {task}")
+#adding tasks 
+def add_task():
+    task = input("Enter a new task: ")
+    tasks.append(task)
+    print(f"'{task}' added to your list.")
+#deleting tasks
+
+def delete_task():
+    show_tasks()
+    try:
+        task_num = int(input("Enter the task number to delete: ")) - 1
+        removed = tasks.pop(task_num)
+        print(f"'{removed}' removed from your list.")
+    except (IndexError, ValueError):
+        print("Invalid task number.")
+#main menu loop 
+
+def main():
+    while True:
+        print("\nOptions:\n1. Show Tasks\n2. Add Task\n3. Delete Task\n4. Exit")
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            show_tasks()
+        elif choice == '2':
+            add_task()
+        elif choice == '3':
+            delete_task()
+        elif choice == '4':
+            print("Goodbye! ✅")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+if __name__ == "__main__":
+    main()
