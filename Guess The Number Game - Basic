@@ -1,0 +1,15 @@
+import random #call library
+
+# Random number between 1 and 10
+number = random.randint(1, 10)  
+
+print("Guess the number (between 1 and 10):")
+
+#take user input
+guess = int(input("Enter your guess: "))
+
+#condition or algorithm of game
+if guess == number:
+    print("🎉 Correct! You guessed the number.")
+else:
+    print(f"❌ Wrong guess. The number was {number}. Try again!")
