@@ -1,0 +1,6 @@
+# ****install library for qrcode from terminal using this command (pip install qrcode)*****
+
+
+import qrcode
+qr = qrcode.make("Link")
+qr.show()
